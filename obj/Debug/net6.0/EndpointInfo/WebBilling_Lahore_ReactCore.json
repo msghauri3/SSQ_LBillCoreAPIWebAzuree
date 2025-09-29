@@ -1,0 +1,46 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Web Billing API",
+    "description": "API for fetching and generating Bahria Town bills",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/WebBilling/GetBill": {
+      "get": {
+        "tags": [
+          "WebBilling"
+        ],
+        "parameters": [
+          {
+            "name": "btNo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sector",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "billingType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

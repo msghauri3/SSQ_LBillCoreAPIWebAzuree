@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "WebBilling_Lahore_ReactCore.Controllers.WebBillingController",
+    "Method": "GetBill",
+    "RelativePath": "api/WebBilling/GetBill",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "btNo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sector",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "billingType",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
