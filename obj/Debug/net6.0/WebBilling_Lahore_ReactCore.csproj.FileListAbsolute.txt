@@ -71,3 +71,4 @@ D:\Dotnet\Core\SSQ_WebBilling_Lahore_ReactCore\WebBilling_Lahore_ReactCore\obj\D
 D:\Dotnet\Core\SSQ_WebBilling_Lahore_ReactCore\WebBilling_Lahore_ReactCore\obj\Debug\net6.0\WebBilling_Lahore_ReactCore.pdb
 D:\Dotnet\Core\SSQ_WebBilling_Lahore_ReactCore\WebBilling_Lahore_ReactCore\obj\Debug\net6.0\WebBilling_Lahore_ReactCore.genruntimeconfig.cache
 D:\Dotnet\Core\SSQ_WebBilling_Lahore_ReactCore\WebBilling_Lahore_ReactCore\obj\Debug\net6.0\ref\WebBilling_Lahore_ReactCore.dll
+D:\Dotnet\Core\SSQ_WebBilling_Lahore_ReactCore\WebBilling_Lahore_ReactCore\obj\Debug\net6.0\WebBilling_Lahore_ReactCore.sourcelink.json

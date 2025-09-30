@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
 using WebBilling_Lahore_ReactCore.Models;
 
@@ -19,6 +20,9 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddDbContext<WebBillingDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("WebBillingDB")));
+
+builder.Services.AddDbContext<SSQReactCoreContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("BTLBillingDB")));
 
 
 builder.Services.AddCors(options =>

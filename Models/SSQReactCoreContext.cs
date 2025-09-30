@@ -4,15 +4,15 @@ using WebBilling_Lahore_ReactCore.Models;
 
 namespace WebBilling_Lahore_ReactCore.Models
 {
-    public class WebBillingDbContext : DbContext
+    public class SSQReactCoreContext : DbContext
     {
-        public WebBillingDbContext(DbContextOptions<WebBillingDbContext> options)
+        public SSQReactCoreContext(DbContextOptions<SSQReactCoreContext> options)
             : base(options)
         {
         }
-
-        // ✅ Use your main model class defined in Models/EBillingNote.cs
-        public DbSet<EBillingNote> EBillingNotes { get; set; }
         public DbSet<ElectricityBill> ElectricityBills { get; set; } // ✅ maps to DB table
+                                                                     // public DbSet<CustomersDetail> CustomersDetails { get; set; }
+        public DbSet<CustomersDetail> CustomersDetails { get; set; }
+
     }
 }

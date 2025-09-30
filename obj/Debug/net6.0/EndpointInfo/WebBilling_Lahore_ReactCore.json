@@ -6,6 +6,55 @@
     "version": "v1"
   },
   "paths": {
+    "/api/ElectricityBill/GetSimpleBill": {
+      "get": {
+        "tags": [
+          "ElectricityBill"
+        ],
+        "parameters": [
+          {
+            "name": "btNo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ElectricityBill/GetBillDetails": {
+      "get": {
+        "tags": [
+          "ElectricityBill"
+        ],
+        "parameters": [
+          {
+            "name": "btNo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "project",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/WebBilling/GetBill": {
       "get": {
         "tags": [
