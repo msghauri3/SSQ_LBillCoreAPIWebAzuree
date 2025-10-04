@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebBilling_Lahore_ReactCore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+84f4eca589cdc7473c5e5e1c7e19bbc0c8b8aec6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bdab66c6d9955ab950b806587287c43b612ff6df")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebBilling_Lahore_ReactCore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebBilling_Lahore_ReactCore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

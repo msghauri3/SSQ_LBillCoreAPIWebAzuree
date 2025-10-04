@@ -1,6 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WebBilling.Models; // ✅ Import your EBillingNote model namespace
-using WebBilling_Lahore_ReactCore.Models;
 
 namespace WebBilling_Lahore_ReactCore.Models
 {
@@ -10,9 +8,9 @@ namespace WebBilling_Lahore_ReactCore.Models
             : base(options)
         {
         }
-        public DbSet<ElectricityBill> ElectricityBills { get; set; } // ✅ maps to DB table
-                                                                     // public DbSet<CustomersDetail> CustomersDetails { get; set; }
-        public DbSet<CustomersDetail> CustomersDetails { get; set; }
+
+        public DbSet<CustomersDetail> CustomersDetail { get; set; }
+        public DbSet<ElectricityBill> ElectricityBills { get; set; }
 
     }
 }

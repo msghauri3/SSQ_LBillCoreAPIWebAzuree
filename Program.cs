@@ -18,7 +18,7 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-builder.Services.AddDbContext<WebBillingDbContext>(options =>
+builder.Services.AddDbContext<WebBillingContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("WebBillingDB")));
 
 builder.Services.AddDbContext<SSQReactCoreContext>(options =>

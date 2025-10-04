@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MlNUQHdJfAk=",
+  "dgSpecHash": "nnk/d65foUw=",
   "success": true,
-  "projectFilePath": "D:\\Projects\\Dotnet\\WebBilling_Lahore_ReactCore\\WebBilling_Lahore_ReactCore.csproj",
+  "projectFilePath": "D:\\Projects\\API\\Dotnet\\WebBilling_Lahore_ReactCore\\WebBilling_Lahore_ReactCore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hafiz Muhammad Talha\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Hafiz Muhammad Talha\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

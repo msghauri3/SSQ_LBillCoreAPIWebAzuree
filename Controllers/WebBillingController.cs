@@ -10,9 +10,9 @@ namespace WebBilling_Lahore_ReactCore.Controllers
     [ApiController]
     public class WebBillingController : ControllerBase
     {
-        private readonly WebBillingDbContext _context;
+        private readonly WebBillingContext _context;
 
-        public WebBillingController(WebBillingDbContext context)
+        public WebBillingController(WebBillingContext context)
         {
             _context = context;
         }

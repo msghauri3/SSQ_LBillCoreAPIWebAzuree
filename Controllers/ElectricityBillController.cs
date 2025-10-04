@@ -47,7 +47,7 @@ namespace WebBilling_Lahore_ReactCore.Controllers
         public async Task<IActionResult> GetBillDetails(string btNo, string project)
         {
             var result = await (from bill in _context.ElectricityBills
-                                join customer in _context.CustomersDetails
+                                join customer in _context.CustomersDetail
                                     on bill.BTNo equals customer.BTNo
                                 where bill.BTNo == btNo && customer.Project == project
                                 select new

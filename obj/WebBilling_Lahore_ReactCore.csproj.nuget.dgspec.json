@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\Dotnet\\WebBilling_Lahore_ReactCore\\WebBilling_Lahore_ReactCore.csproj": {}
+    "D:\\Projects\\API\\Dotnet\\WebBilling_Lahore_ReactCore\\WebBilling_Lahore_ReactCore.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\Dotnet\\WebBilling_Lahore_ReactCore\\WebBilling_Lahore_ReactCore.csproj": {
+    "D:\\Projects\\API\\Dotnet\\WebBilling_Lahore_ReactCore\\WebBilling_Lahore_ReactCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Dotnet\\WebBilling_Lahore_ReactCore\\WebBilling_Lahore_ReactCore.csproj",
+        "projectUniqueName": "D:\\Projects\\API\\Dotnet\\WebBilling_Lahore_ReactCore\\WebBilling_Lahore_ReactCore.csproj",
         "projectName": "WebBilling_Lahore_ReactCore",
-        "projectPath": "D:\\Projects\\Dotnet\\WebBilling_Lahore_ReactCore\\WebBilling_Lahore_ReactCore.csproj",
+        "projectPath": "D:\\Projects\\API\\Dotnet\\WebBilling_Lahore_ReactCore\\WebBilling_Lahore_ReactCore.csproj",
         "packagesPath": "C:\\Users\\Hafiz Muhammad Talha\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Dotnet\\WebBilling_Lahore_ReactCore\\obj\\",
+        "outputPath": "D:\\Projects\\API\\Dotnet\\WebBilling_Lahore_ReactCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",

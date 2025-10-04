@@ -1,12 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WebBilling.Models; // ✅ Import your EBillingNote model namespace
 using WebBilling_Lahore_ReactCore.Models;
 
 namespace WebBilling_Lahore_ReactCore.Models
 {
-    public class WebBillingDbContext : DbContext
+    public class WebBillingContext : DbContext
     {
-        public WebBillingDbContext(DbContextOptions<WebBillingDbContext> options)
+        public WebBillingContext(DbContextOptions<WebBillingContext> options)
             : base(options)
         {
         }
