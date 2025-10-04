@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 using WebBilling_Lahore_ReactCore.Models;
 
 namespace WebBilling_Lahore_ReactCore.Controllers
@@ -16,72 +15,31 @@ namespace WebBilling_Lahore_ReactCore.Controllers
             _context = context;
         }
 
-        [HttpGet("GetSimpleBill")]
-        public IActionResult GetSimpleBill(string btNo)
+        // ✅ GET: api/ElectricityBill?BTNo=BT-1001&Project=SSQ
+        [HttpGet]
+        public async Task<IActionResult> GetElectricityBills(string BTNo, string Project)
         {
-            var bill = _context.ElectricityBills
-                .Where(b => b.BTNo == btNo)
-                .Select(b => new ElectricityBill
-                {
-                    InvoiceNo = b.InvoiceNo,
-                    CustomerNo = b.CustomerNo,
-                    CustomerName = b.CustomerName,
-                    BTNo = b.BTNo,
-                    BillingMonth = b.BillingMonth,
-                    BillingYear = b.BillingYear,
-                    //AmountDueDate = b.DueDate,
-                    //AmountAfterDate = b.BillAmountAfterDueDate
-                })
-                .FirstOrDefault();
+            try
+            {
+                var result = await (from bill in _context.ElectricityBills
+                                    join cust in _context.CustomersDetail
+                                    on bill.BTNo equals cust.BTNo
+                                    where cust.Project == Project && bill.BTNo == BTNo
+                                    select new
+                                    {
+                                        ElectricityBill = bill,
+                                        CustomerDetail = cust
+                                    }).ToListAsync();
 
-            if (bill == null)
-                return NotFound(new { message = "No bill found for given BTNo." });
+                if (result == null || !result.Any())
+                    return NotFound("No record found for given BTNo and Project.");
 
-            return Ok(bill);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error retrieving data: " + ex.Message);
+            }
         }
-
-
-
-
-        [HttpGet("GetBillDetails")]
-        public async Task<IActionResult> GetBillDetails(string btNo, string project)
-        {
-            var result = await (from bill in _context.ElectricityBills
-                                join customer in _context.CustomersDetail
-                                    on bill.BTNo equals customer.BTNo
-                                where bill.BTNo == btNo && customer.Project == project
-                                select new
-                                {
-                                    bill.InvoiceNo,
-                                    bill.CustomerNo,
-                                    bill.CustomerName,
-                                    bill.BTNo,
-                                    bill.BillingMonth,
-                                    bill.BillingYear,
-                                    bill.DueDate,
-                                    bill.BillAmountAfterDueDate,
-                                    customer.Sector,
-                                    customer.Block,
-                                    customer.Project
-                                    // customer.BillingType (uncomment if needed later)
-                                })
-                                .FirstOrDefaultAsync();
-
-            if (result == null)
-                return NotFound(new { message = "No bill or customer found for given BTNo and Project" });
-
-            return Ok(result);
-        }
-
-
-
-
-
-
     }
-
-
-
-
-
 }

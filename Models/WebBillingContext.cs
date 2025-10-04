@@ -12,6 +12,5 @@ namespace WebBilling_Lahore_ReactCore.Models
 
         // ✅ Use your main model class defined in Models/EBillingNote.cs
         public DbSet<EBillingNote> EBillingNotes { get; set; }
-        public DbSet<ElectricityBill> ElectricityBills { get; set; } // ✅ maps to DB table
     }
 }
