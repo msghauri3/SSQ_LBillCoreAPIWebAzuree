@@ -34,6 +34,34 @@
         }
       }
     },
+    "/api/MaintenanceBill": {
+      "get": {
+        "tags": [
+          "MaintenanceBill"
+        ],
+        "parameters": [
+          {
+            "name": "BTNo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Project",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/WebBilling": {
       "get": {
         "tags": [
