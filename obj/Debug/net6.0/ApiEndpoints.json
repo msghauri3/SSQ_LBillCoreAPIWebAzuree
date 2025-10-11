@@ -1,67 +1,5 @@
 [
   {
-    "ContainingType": "WebBilling_Lahore_ReactCore.Controllers.CustomersDetailController",
-    "Method": "GetAllCustomers",
-    "RelativePath": "api/CustomersDetail",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebBilling_Lahore_ReactCore.Models.CustomersDetail, WebBilling_Lahore_ReactCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebBilling_Lahore_ReactCore.Controllers.CustomersDetailController",
-    "Method": "AddCustomer",
-    "RelativePath": "api/CustomersDetail",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "model",
-        "Type": "WebBilling_Lahore_ReactCore.Models.CustomersDetail",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "WebBilling_Lahore_ReactCore.Controllers.CustomersDetailController",
-    "Method": "GetCustomerById",
-    "RelativePath": "api/CustomersDetail/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "WebBilling_Lahore_ReactCore.Models.CustomersDetail",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
     "ContainingType": "WebBilling_Lahore_ReactCore.Controllers.ElectricityBillController",
     "Method": "GetElectricityBills",
     "RelativePath": "api/ElectricityBill",
@@ -84,24 +22,19 @@
   },
   {
     "ContainingType": "WebBilling_Lahore_ReactCore.Controllers.WebBillingController",
-    "Method": "GetBill",
-    "RelativePath": "api/WebBilling/GetBill",
+    "Method": "GetEBill",
+    "RelativePath": "api/WebBilling",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "btNo",
+        "Name": "BTNo",
         "Type": "System.String",
         "IsRequired": false
       },
       {
-        "Name": "sector",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "billingType",
+        "Name": "Sector",
         "Type": "System.String",
         "IsRequired": false
       }

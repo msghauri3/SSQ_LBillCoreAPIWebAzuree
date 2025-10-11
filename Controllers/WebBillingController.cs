@@ -1,8 +1,6 @@
-﻿using WebBilling_Lahore_ReactCore.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using System.Threading.Tasks;
+using WebBilling_Lahore_ReactCore.Models;
 
 namespace WebBilling_Lahore_ReactCore.Controllers
 {
@@ -17,42 +15,28 @@ namespace WebBilling_Lahore_ReactCore.Controllers
             _context = context;
         }
 
-        // ✅ GetBill using query parameters
-        [HttpGet("GetBill")]
-        public async Task<IActionResult> GetBill(
-            [FromQuery] string btNo,
-            [FromQuery] string sector,
-            [FromQuery] string billingType)
+        // ✅ Example: api/EBillingNotes?BTNo=BTL-10014&Sector=B
+        [HttpGet]
+        public async Task<IActionResult> GetEBill(string BTNo, string Sector)
         {
-            if (string.IsNullOrEmpty(btNo) || string.IsNullOrEmpty(sector))
+            try
             {
-                return BadRequest(new { message = "btNo and project are required." });
+                // ✅ Fetch all bills where BTNo & Sector match
+                var result = await _context.EBillingNotes
+                    .Where(b => b.REFRENCENOBARCODE == BTNo &&
+                                b.Sector.ToLower() == Sector.ToLower())
+                    .ToListAsync();
+
+                if (result == null || !result.Any())
+                    return NotFound("No record found for given BTNo and Sector.");
+
+                // ✅ Automatically return all fields of EBillingNotes
+                return Ok(result);
             }
-
-            var bills = await _context.EBillingNotes
-                .Where(b => b.REFRENCENOBARCODE == btNo
-                && b.Sector.ToLower() == sector.ToLower() 
-                
-
-                ) // ✅ Filter by btNo
-                .Select(b => new
-                {
-                    b.Customer_Name,
-                    b.Plot_Number,
-                    b.Meter_Number,
-                    b.paymentstatus,
-                    b.totalunit,
-                    b.GTotalAmount,
-                    b.TotalElecCharges,
-                    b.GTotal,
-                    b.InvoiceNo
-                })
-                .ToListAsync();
-
-            if (!bills.Any())
-                return NotFound(new { message = "No bill found for given BTNo and Project." });
-
-            return Ok(bills);
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error retrieving data: " + ex.Message);
+            }
         }
     }
 }

@@ -6,113 +6,6 @@
     "version": "v1"
   },
   "paths": {
-    "/api/CustomersDetail": {
-      "get": {
-        "tags": [
-          "CustomersDetail"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CustomersDetail"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CustomersDetail"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CustomersDetail"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "CustomersDetail"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CustomersDetail"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CustomersDetail"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CustomersDetail"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/CustomersDetail/{id}": {
-      "get": {
-        "tags": [
-          "CustomersDetail"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/CustomersDetail"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CustomersDetail"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CustomersDetail"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/ElectricityBill": {
       "get": {
         "tags": [
@@ -141,28 +34,21 @@
         }
       }
     },
-    "/api/WebBilling/GetBill": {
+    "/api/WebBilling": {
       "get": {
         "tags": [
           "WebBilling"
         ],
         "parameters": [
           {
-            "name": "btNo",
+            "name": "BTNo",
             "in": "query",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "sector",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "billingType",
+            "name": "Sector",
             "in": "query",
             "schema": {
               "type": "string"
@@ -177,137 +63,5 @@
       }
     }
   },
-  "components": {
-    "schemas": {
-      "CustomersDetail": {
-        "required": [
-          "customerNo"
-        ],
-        "type": "object",
-        "properties": {
-          "uid": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "customerNo": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "btNo": {
-            "type": "string",
-            "nullable": true
-          },
-          "customerName": {
-            "type": "string",
-            "nullable": true
-          },
-          "generatedMonthYear": {
-            "type": "string",
-            "nullable": true
-          },
-          "locationSeqNo": {
-            "type": "string",
-            "nullable": true
-          },
-          "cnicNo": {
-            "type": "string",
-            "nullable": true
-          },
-          "fatherName": {
-            "type": "string",
-            "nullable": true
-          },
-          "installedOn": {
-            "type": "string",
-            "nullable": true
-          },
-          "mobileNo": {
-            "type": "string",
-            "nullable": true
-          },
-          "telephoneNo": {
-            "type": "string",
-            "nullable": true
-          },
-          "meterType": {
-            "type": "string",
-            "nullable": true
-          },
-          "ntnNumber": {
-            "type": "string",
-            "nullable": true
-          },
-          "city": {
-            "type": "string",
-            "nullable": true
-          },
-          "project": {
-            "type": "string",
-            "nullable": true
-          },
-          "subProject": {
-            "type": "string",
-            "nullable": true
-          },
-          "tariffName": {
-            "type": "string",
-            "nullable": true
-          },
-          "bankNo": {
-            "type": "string",
-            "nullable": true
-          },
-          "btNoMaintenance": {
-            "type": "string",
-            "nullable": true
-          },
-          "category": {
-            "type": "string",
-            "nullable": true
-          },
-          "block": {
-            "type": "string",
-            "nullable": true
-          },
-          "plotType": {
-            "type": "string",
-            "nullable": true
-          },
-          "size": {
-            "type": "string",
-            "nullable": true
-          },
-          "sector": {
-            "type": "string",
-            "nullable": true
-          },
-          "ploNo": {
-            "type": "string",
-            "nullable": true
-          },
-          "billStatusMaint": {
-            "type": "string",
-            "nullable": true
-          },
-          "billStatus": {
-            "type": "string",
-            "nullable": true
-          },
-          "history": {
-            "type": "string",
-            "nullable": true
-          },
-          "meterNo": {
-            "type": "string",
-            "nullable": true
-          },
-          "billGenerationStatus": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      }
-    }
-  }
+  "components": { }
 }
