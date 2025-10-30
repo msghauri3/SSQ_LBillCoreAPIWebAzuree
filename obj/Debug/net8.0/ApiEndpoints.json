@@ -1,0 +1,65 @@
+[
+  {
+    "ContainingType": "WebBilling_Lahore_ReactCore.Controllers.ElectricityBillController",
+    "Method": "GetElectricityBills",
+    "RelativePath": "api/ElectricityBill",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "BTNo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Project",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebBilling_Lahore_ReactCore.Controllers.MaintenanceBillController",
+    "Method": "GetElectricityBills",
+    "RelativePath": "api/MaintenanceBill",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "BTNo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Project",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebBilling_Lahore_ReactCore.Controllers.WebBillingController",
+    "Method": "GetEBill",
+    "RelativePath": "api/WebBilling",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "BTNo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Sector",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
