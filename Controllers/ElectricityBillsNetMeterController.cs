@@ -7,10 +7,9 @@ namespace WebBilling_Lahore_ReactCore.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ElectricityBillController : ControllerBase
+    public class ElectricityBillsNetMeterController : ControllerBase
     {
         private readonly SSQReactCoreContext _context;
-
         // ✅ Month order defined once, reused everywhere
         private static readonly List<string> MonthOrder = new()
         {
@@ -18,44 +17,43 @@ namespace WebBilling_Lahore_ReactCore.Controllers
             "July", "August", "September", "October", "November", "December"
         };
 
-        public ElectricityBillController(SSQReactCoreContext context)
+        public ElectricityBillsNetMeterController(SSQReactCoreContext context)
         {
             _context = context;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetElectricityBills(string BTNo, string Project)
+        public async Task<IActionResult> GetElectricityBillsNetMeter(string BTNo, string Project)
         {
             try
             {
                 // Step 1: Get latest bill with customer details
-                var latestData = (from bill in _context.ElectricityBills
+                var latestData = (from bill in _context.ElectricityBillsNetMeter
                                   join cust in _context.CustomersDetail
                                   on bill.BTNo equals cust.BTNo
                                   where bill.BTNo == BTNo && cust.Project == Project
                                   select new
                                   {
-                                      ElectricityBill = bill,
+                                      ElectricityBillsNetMeter = bill,
                                       CustomerDetail = cust
                                   })
-                                    .AsEnumerable() // <-- Force client-side sorting
-                                    .OrderByDescending(x => Convert.ToInt32(x.ElectricityBill.BillingYear))
-                                    .ThenByDescending(x => MonthOrder.IndexOf(x.ElectricityBill.BillingMonth))
-                                    .FirstOrDefault();
-
+                                   .AsEnumerable() // <-- Force client-side sorting
+                                   .OrderByDescending(x => Convert.ToInt32(x.ElectricityBillsNetMeter.BillingYear))
+                                   .ThenByDescending(x => MonthOrder.IndexOf(x.ElectricityBillsNetMeter.BillingMonth))
+                                   .FirstOrDefault();
 
                 if (latestData == null)
                     return NotFound("No record found for given BTNo and Project.");
 
                 // Step 2: Get the latest bill year and month
-                int latestYear = Convert.ToInt32(latestData.ElectricityBill.BillingYear);
-                string latestMonth = latestData.ElectricityBill.BillingMonth;
+                int latestYear = Convert.ToInt32(latestData.ElectricityBillsNetMeter.BillingYear);
+                string latestMonth = latestData.ElectricityBillsNetMeter.BillingMonth;
 
                 // Step 3: Month order
                 int latestMonthIndex = MonthOrder.IndexOf(latestMonth);
 
                 // Step 4: Fetch both years' data
-                var bills = await _context.ElectricityBills
+                var bills = await _context.ElectricityBillsNetMeter
                     .Where(b => b.BTNo == BTNo &&
                                 (Convert.ToInt32(b.BillingYear) == latestYear ||
                                  Convert.ToInt32(b.BillingYear) == latestYear - 1))
@@ -63,16 +61,14 @@ namespace WebBilling_Lahore_ReactCore.Controllers
                     {
                         BillingMonth = b.BillingMonth,
                         BillingYear = Convert.ToInt32(b.BillingYear),
-                        Units = b.TotalUnit ?? 0,
-                        Bill = b.BillAmountInDueDate ?? 0m,
-                        Payment =
-                            b.PaymentStatus == "Paid"
-                            ? (b.BillAmountInDueDate ?? 0).ToString()
-                            : b.PaymentStatus == "Paid With Surcharge"
-                            ? (b.BillAmountAfterDueDate ?? 0).ToString()
-                            : b.PaymentStatus == "Partially Paid"
-                            ? "Partially Paid"
-                            : "0"
+
+                        // ✅ Show SumUnitsImport instead of TotalUnit
+                        Units = (decimal?)(b.SumUnitsImport ?? 0),
+
+                        // ✅ If BillAmountInDueDate == 0 or null → use BillAmount
+                        Bill = (b.BillAmountInDueDate == null || b.BillAmountInDueDate == 0)
+                        ? (decimal?)(b.BillAmount ?? 0)
+                        : (decimal?)(b.BillAmountInDueDate ?? 0),
                     })
                     .ToListAsync();
 
@@ -90,13 +86,13 @@ namespace WebBilling_Lahore_ReactCore.Controllers
                 // Step 6: Prepare final 12-month sequence (Jan→latestMonth of latestYear, then previous Oct–Dec)
                 var finalMonths = MonthOrder.Take(latestMonthIndex + 1)
                     .Select(m => latestYearData.FirstOrDefault(x => x.BillingMonth == m) ??
-                                 new { BillingMonth = m, BillingYear = latestYear, Units = 0m, Bill = 0m, Payment = "0" })
+                                 new { BillingMonth = m, BillingYear = latestYear, Units = (decimal?)0, Bill = (decimal?)0 })
                     .ToList();
 
                 // Add remaining months (from previous year)
                 var remainingMonths = MonthOrder.Skip(latestMonthIndex + 1)
                     .Select(m => previousYearData.FirstOrDefault(x => x.BillingMonth == m) ??
-                                 new { BillingMonth = m, BillingYear = latestYear - 1, Units = 0m, Bill = 0m, Payment = "0" })
+                                 new { BillingMonth = m, BillingYear = latestYear - 1, Units = (decimal?)0, Bill = (decimal?)0 })
                     .ToList();
 
                 var fullYearData = finalMonths.Concat(remainingMonths).ToList();
@@ -104,7 +100,7 @@ namespace WebBilling_Lahore_ReactCore.Controllers
                 // Step 7: Final response
                 var finalResult = new
                 {
-                    latestData.ElectricityBill,
+                    latestData.ElectricityBillsNetMeter,
                     latestData.CustomerDetail,
                     BillHistory = fullYearData
                 };

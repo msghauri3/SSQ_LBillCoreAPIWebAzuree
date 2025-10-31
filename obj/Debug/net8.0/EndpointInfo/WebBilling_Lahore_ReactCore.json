@@ -34,10 +34,10 @@
         }
       }
     },
-    "/api/MaintenanceBill": {
+    "/api/ElectricityBillsNetMeter": {
       "get": {
         "tags": [
-          "MaintenanceBill"
+          "ElectricityBillsNetMeter"
         ],
         "parameters": [
           {
@@ -62,10 +62,10 @@
         }
       }
     },
-    "/api/WebBilling": {
+    "/api/MaintenanceBill": {
       "get": {
         "tags": [
-          "WebBilling"
+          "MaintenanceBill"
         ],
         "parameters": [
           {
@@ -76,7 +76,7 @@
             }
           },
           {
-            "name": "Sector",
+            "name": "Project",
             "in": "query",
             "schema": {
               "type": "string"

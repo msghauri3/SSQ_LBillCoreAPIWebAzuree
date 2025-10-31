@@ -13,5 +13,7 @@ namespace WebBilling_Lahore_ReactCore.Models
         public DbSet<ElectricityBills> ElectricityBills { get; set; }
         public DbSet<MaintenanceBills> MaintenanceBills { get; set; }
         public DbSet<CustomersMaintenance> CustomersMaintenance { get; set; }
+        public DbSet<ElectricityBillsNetMeter> ElectricityBillsNetMeter { get; set; }
+
     }
 }
