@@ -81,5 +81,8 @@ namespace WebBilling_Lahore_ReactCore.Models
         public int? NMPreviousCredit { get; set; }
         public int? NMCurrentCredit { get; set; }
         public int? NMTotalCredit { get; set; }
+
+        [Column("MF@")]
+        public int? MF { get; set; }  // Property name MF rakhi, SQL column MF@ ke sath map hogi
     }
 }

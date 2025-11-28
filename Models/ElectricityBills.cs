@@ -70,5 +70,14 @@ namespace WebBilling_Lahore_ReactCore.Models
         public int? SalesTax { get; set; }
         public int? IncomeTax { get; set; }
         public int? ExtraTax { get; set; }
+
+        [Column("MF@")]
+        public int? MF { get; set; }  // Property name MF rakhi, SQL column MF@ ke sath map hogi
+
+        public decimal? UnitRate { get; set; }
+        public int? MDIReading { get; set; }
+        public int? DeferredAmount { get; set; }
+
+
     }
 }
