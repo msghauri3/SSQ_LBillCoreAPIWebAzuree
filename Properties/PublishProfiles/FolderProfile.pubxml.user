@@ -2,8 +2,8 @@
 <!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>D:\Publish EBills\24Nov2025_LBillCoreAPIWeb</_PublishTargetUrl>
-    <History>True|2025-11-24T04:27:18.7535050Z||;True|2025-11-20T10:49:59.1674480+05:00||;True|2025-11-19T12:48:32.6585147+05:00||;True|2025-10-16T09:42:28.4898097+05:00||;True|2025-10-16T09:27:19.7503130+05:00||;True|2025-10-15T17:19:02.5148510+05:00||;True|2025-10-15T15:31:40.6282902+05:00||;True|2025-10-15T15:20:14.4874139+05:00||;</History>
+    <_PublishTargetUrl>D:\Publish EBills\28Nov25_LBillCoreAPIWeb</_PublishTargetUrl>
+    <History>True|2025-11-28T07:48:03.7392904Z||;True|2025-11-24T09:27:18.7535050+05:00||;True|2025-11-20T10:49:59.1674480+05:00||;True|2025-11-19T12:48:32.6585147+05:00||;True|2025-10-16T09:42:28.4898097+05:00||;True|2025-10-16T09:27:19.7503130+05:00||;True|2025-10-15T17:19:02.5148510+05:00||;True|2025-10-15T15:31:40.6282902+05:00||;True|2025-10-15T15:20:14.4874139+05:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>
