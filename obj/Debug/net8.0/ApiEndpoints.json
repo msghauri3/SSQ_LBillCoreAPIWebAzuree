@@ -42,6 +42,26 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebBilling_Lahore_ReactCore.Controllers.HelloWorldController",
+    "Method": "Index",
+    "RelativePath": "api/HelloWorld",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebBilling_Lahore_ReactCore.Controllers.HomeController",
+    "Method": "Index",
+    "RelativePath": "api/Home",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebBilling_Lahore_ReactCore.Controllers.MaintenanceBillController",
     "Method": "GetElectricityBills",
     "RelativePath": "api/MaintenanceBill",
