@@ -43,7 +43,7 @@
   },
   {
     "ContainingType": "WebBilling_Lahore_ReactCore.Controllers.MaintenanceBillController",
-    "Method": "GetElectricityBills",
+    "Method": "GetLatestMaintenanceBill",
     "RelativePath": "api/MaintenanceBill",
     "HttpMethod": "GET",
     "IsController": true,
