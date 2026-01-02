@@ -27,6 +27,7 @@ namespace WebBilling_Lahore_ReactCore.Controllers
         {
             try
             {
+                // ✅ Step 1: Get latest bill using Year + Month order
                 var latestData = (from bill in _context.MaintenanceBills
                                   join cust in _context.CustomersMaintenance
                                   on bill.BTNo equals cust.BTNo
@@ -36,29 +37,28 @@ namespace WebBilling_Lahore_ReactCore.Controllers
                                       maintenanceBills = bill,
                                       customersMaintenance = cust
                                   })
-                                  .AsEnumerable()
+                                  .AsEnumerable() // 👈 MonthOrder client-side sorting
                                   .OrderByDescending(x => Convert.ToInt32(x.maintenanceBills.BillingYear))
                                   .ThenByDescending(x => MonthOrder.IndexOf(x.maintenanceBills.BillingMonth))
                                   .FirstOrDefault();
 
-
                 if (latestData == null)
                     return NotFound("No record found for given BTNo and Project.");
 
-                return Ok(new[]
+                // ✅ Step 2: Final response (ONLY latest bill)
+                var result = new
                 {
-            new
-            {
-                maintenanceBills = latestData.maintenanceBills,
-                customersMaintenance = latestData.customersMaintenance
-            }
-        });
+                    latestData.maintenanceBills,
+                    latestData.customersMaintenance
+                };
+
+                return Ok(result);
             }
             catch (Exception ex)
             {
                 return StatusCode(500, "Error retrieving data: " + ex.Message);
             }
         }
-
     }
 }
+
