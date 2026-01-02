@@ -34,12 +34,12 @@ namespace WebBilling_Lahore_ReactCore.Controllers
                                   where bill.BTNo == BTNo && cust.Project == Project
                                   select new
                                   {
-                                      maintenanceBills = bill,
-                                      customersMaintenance = cust
+                                      MaintenanceBill = bill,
+                                      CustomerMaintenance = cust
                                   })
                                   .AsEnumerable() // 👈 MonthOrder client-side sorting
-                                  .OrderByDescending(x => Convert.ToInt32(x.maintenanceBills.BillingYear))
-                                  .ThenByDescending(x => MonthOrder.IndexOf(x.maintenanceBills.BillingMonth))
+                                  .OrderByDescending(x => Convert.ToInt32(x.MaintenanceBill.BillingYear))
+                                  .ThenByDescending(x => MonthOrder.IndexOf(x.MaintenanceBill.BillingMonth))
                                   .FirstOrDefault();
 
                 if (latestData == null)
@@ -48,8 +48,8 @@ namespace WebBilling_Lahore_ReactCore.Controllers
                 // ✅ Step 2: Final response (ONLY latest bill)
                 var result = new
                 {
-                    latestData.maintenanceBills,
-                    latestData.customersMaintenance
+                    latestData.MaintenanceBill,
+                    latestData.CustomerMaintenance
                 };
 
                 return Ok(result);
@@ -61,4 +61,3 @@ namespace WebBilling_Lahore_ReactCore.Controllers
         }
     }
 }
-
