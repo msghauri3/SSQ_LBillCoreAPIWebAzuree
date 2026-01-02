@@ -27,37 +27,37 @@ namespace WebBilling_Lahore_ReactCore.Controllers
         {
             try
             {
-                // ✅ Step 1: Get latest bill using Year + Month order
                 var latestData = (from bill in _context.MaintenanceBills
                                   join cust in _context.CustomersMaintenance
                                   on bill.BTNo equals cust.BTNo
                                   where bill.BTNo == BTNo && cust.Project == Project
                                   select new
                                   {
-                                      MaintenanceBill = bill,
-                                      CustomerMaintenance = cust
+                                      maintenanceBills = bill,
+                                      customersMaintenance = cust
                                   })
-                                  .AsEnumerable() // 👈 MonthOrder client-side sorting
-                                  .OrderByDescending(x => Convert.ToInt32(x.MaintenanceBill.BillingYear))
-                                  .ThenByDescending(x => MonthOrder.IndexOf(x.MaintenanceBill.BillingMonth))
+                                  .AsEnumerable()
+                                  .OrderByDescending(x => Convert.ToInt32(x.maintenanceBills.BillingYear))
+                                  .ThenByDescending(x => MonthOrder.IndexOf(x.maintenanceBills.BillingMonth))
                                   .FirstOrDefault();
 
                 if (latestData == null)
                     return NotFound("No record found for given BTNo and Project.");
 
-                // ✅ Step 2: Final response (ONLY latest bill)
-                var result = new
+                return Ok(new[]
                 {
-                    latestData.MaintenanceBill,
-                    latestData.CustomerMaintenance
-                };
-
-                return Ok(result);
+            new
+            {
+                maintenanceBills = latestData.maintenanceBills,
+                customersMaintenance = latestData.customersMaintenance
+            }
+        });
             }
             catch (Exception ex)
             {
                 return StatusCode(500, "Error retrieving data: " + ex.Message);
             }
         }
+
     }
 }
