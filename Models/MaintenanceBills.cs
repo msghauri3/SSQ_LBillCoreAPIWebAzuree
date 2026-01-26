@@ -57,5 +57,6 @@ namespace WebBilling_Lahore_ReactCore.Models
         public int? Fine { get; set; }
         public int? OtherCharges { get; set; }
         public int? WaterCharges { get; set; }
+        public string? FineDept { get; set; }
     }
 }
