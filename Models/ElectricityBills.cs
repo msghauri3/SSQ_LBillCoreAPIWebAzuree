@@ -75,7 +75,7 @@ namespace WebBilling_Lahore_ReactCore.Models
         public int? MF { get; set; }  // Property name MF rakhi, SQL column MF@ ke sath map hogi
 
         public decimal? UnitRate { get; set; }
-        public int? MDIReading { get; set; }
+        public decimal? MDIReading { get; set; }
         public int? DeferredAmount { get; set; }
 
 
