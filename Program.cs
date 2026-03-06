@@ -1,16 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
 using WebBilling_Lahore_ReactCore.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ✅ Add services to the container
+// Add services
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
+
+// Swagger configuration
+builder.Services.AddSwaggerGen(options =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo
+    options.SwaggerDoc("v1", new OpenApiInfo
     {
         Title = "Web Billing API",
         Version = "v1",
@@ -18,45 +19,41 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+// Database connection
 builder.Services.AddDbContext<SSQReactCoreContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("BTLBillingDB")));
 
-
+// CORS - Allow all origins
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowReactApp", policy =>
-    {
-        policy
-            .WithOrigins(
-                "http://localhost:3000",
-                "https://softwaredemo.space",
-                "https://e-billingbahriatownlahore.com"
-            )
-            .AllowAnyHeader()
-            .AllowAnyMethod()
-            .AllowCredentials();
-    });
+    options.AddPolicy("AllowAll",
+        policy =>
+        {
+            policy
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+        });
 });
-
-
 
 var app = builder.Build();
 
-app.UseCors("AllowReactApp");
+// Enable CORS
+app.UseCors("AllowAll");
 
-// ✅ Configure the HTTP request pipeline
-if (app.Environment.IsDevelopment())
+// Enable Swagger in ALL environments
+app.UseSwagger();
+
+app.UseSwaggerUI(options =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Web Billing API v1");
-        c.RoutePrefix = string.Empty; // 👈 This makes Swagger UI open on https://localhost:7108/
-    });
-}
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "Web Billing API v1");
+    options.RoutePrefix = ""; // Swagger root par open hoga
+});
 
 app.UseHttpsRedirection();
+
 app.UseAuthorization();
+
 app.MapControllers();
 
 app.Run();

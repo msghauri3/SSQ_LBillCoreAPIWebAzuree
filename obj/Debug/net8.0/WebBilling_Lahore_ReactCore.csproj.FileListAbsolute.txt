@@ -281,10 +281,10 @@ D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Debug\net8.0\staticweb
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Debug\net8.0\staticwebassets.build.json.cache
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Debug\net8.0\staticwebassets.development.json
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Debug\net8.0\WebBilli.B4438683.Up2Date
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Debug\net8.0\WebBilling_Lahore_ReactCore.dll
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Debug\net8.0\refint\WebBilling_Lahore_ReactCore.dll
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Debug\net8.0\WebBilling_Lahore_ReactCore.pdb
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Debug\net8.0\WebBilling_Lahore_ReactCore.genruntimeconfig.cache
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Debug\net8.0\ref\WebBilling_Lahore_ReactCore.dll
+D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
