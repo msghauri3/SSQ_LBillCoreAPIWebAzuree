@@ -268,15 +268,11 @@ D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Release\net8.0\WebBill
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Release\net8.0\WebBilling_Lahore_ReactCore.csproj.CoreCompileInputs.cache
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Release\net8.0\WebBilling_Lahore_ReactCore.MvcApplicationPartsAssemblyInfo.cs
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Release\net8.0\WebBilling_Lahore_ReactCore.MvcApplicationPartsAssemblyInfo.cache
-D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Release\net8.0\WebBilling_Lahore_ReactCore.RazorAssemblyInfo.cache
-D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Release\net8.0\WebBilling_Lahore_ReactCore.RazorAssemblyInfo.cs
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Release\net8.0\WebBilling_Lahore_ReactCore.sourcelink.json
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Release\net8.0\rjimswa.dswa.cache.json
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Release\net8.0\rjsmrazor.dswa.cache.json
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Release\net8.0\rjsmcshtml.dswa.cache.json
-D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Release\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Release\net8.0\scopedcss\bundle\WebBilling_Lahore_ReactCore.styles.css
-D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Release\net8.0\scopedcss\projectbundle\WebBilling_Lahore_ReactCore.bundle.scp.css
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Release\net8.0\staticwebassets.build.json
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Release\net8.0\staticwebassets.build.json.cache
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Release\net8.0\staticwebassets.development.json

@@ -78,6 +78,7 @@ namespace WebBilling_Lahore_ReactCore.Models
         public decimal? MDIReading { get; set; }
         public int? DeferredAmount { get; set; }
 
+        public string? FaultyMeter { get; set; }
 
     }
 }
