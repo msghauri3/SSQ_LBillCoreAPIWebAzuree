@@ -83,6 +83,8 @@ namespace WebBilling_Lahore_ReactCore.Models
         public int? NMTotalCredit { get; set; }
 
         [Column("MF@")]
-        public int? MF { get; set; }  // Property name MF rakhi, SQL column MF@ ke sath map hogi
+        public int? MF { get; set; }
+        public string? AMIMeter { get; set; }
+        public string? TariffType { get; set; }
     }
 }

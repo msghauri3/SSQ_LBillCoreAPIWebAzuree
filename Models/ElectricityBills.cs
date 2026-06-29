@@ -79,6 +79,8 @@ namespace WebBilling_Lahore_ReactCore.Models
         public int? DeferredAmount { get; set; }
 
         public string? FaultyMeter { get; set; }
+        public string? AMIMeter { get; set; }
+        public string? TariffType { get; set; }
 
     }
 }

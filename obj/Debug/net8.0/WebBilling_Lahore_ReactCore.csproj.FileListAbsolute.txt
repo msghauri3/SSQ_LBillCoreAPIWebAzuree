@@ -283,5 +283,4 @@ D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Debug\net8.0\refint\We
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Debug\net8.0\WebBilling_Lahore_ReactCore.pdb
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Debug\net8.0\WebBilling_Lahore_ReactCore.genruntimeconfig.cache
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Debug\net8.0\ref\WebBilling_Lahore_ReactCore.dll
-D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\Qasim\Project\API\Dotnet\SSQ_LBillCoreAPIWebAzuree\obj\Debug\net8.0\swae.build.ex.cache
