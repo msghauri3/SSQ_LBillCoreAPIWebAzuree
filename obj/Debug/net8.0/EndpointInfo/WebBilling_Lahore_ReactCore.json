@@ -6,38 +6,10 @@
     "version": "v1"
   },
   "paths": {
-    "/api/ElectricityBill": {
+    "/api/Electricity_NetMeterBill": {
       "get": {
         "tags": [
-          "ElectricityBill"
-        ],
-        "parameters": [
-          {
-            "name": "BTNo",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Project",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/ElectricityBillsNetMeter": {
-      "get": {
-        "tags": [
-          "ElectricityBillsNetMeter"
+          "Electricity_NetMeterBill"
         ],
         "parameters": [
           {
